@@ -1,0 +1,97 @@
+### Get All Users
+GET http://localhost:3000/users/listAll
+
+### Get Single User
+GET http://localhost:3000/users/listOne/61cae21d0179927162f7c26c
+
+### Insert new User
+POST http://localhost:3000/users/addUser
+Content-Type: application/json
+
+{
+    "firstname": "push testing",
+    "lastname": "sivaji",
+    "mailid": "pandatamil@gmail.com",
+    "role": "owner",
+    "phnumber": 2233399900
+}
+
+### Update User
+PATCH  http://localhost:3000/users/updateUser/61ec4ca3e2c0b50b7e5fe234
+Content-Type: application/json
+
+{
+    "firstname": "git push testing ",
+    "lastname": "kuamr",
+    "mailid": "rajkumar@gmail.com",
+    "role": "tenent",
+    "phnumber": 11234567890
+}
+
+### Delete User
+DELETE  http://localhost:3000/users/deleteUser/61cae21d0179927162f7c26c
+
+########################################################################
+
+### Get All Homeowners
+GET http://localhost:3000/homeowners/listAll
+
+### Get Single Homeowners
+GET http://localhost:3000/homeowners/listOne/61cbef1f41454297c3ab041d
+
+### Insert new Homeowners
+POST http://localhost:3000/homeowners/addHomeowner
+Content-Type: application/json
+
+{
+ "first_name": "pandi",
+ "last_name": "nandha",
+ "mail_address": "pandi@nandha.com",
+ "address": {
+    "address_line_1": "2/1819 karajer",
+    "address_line_2": "viswaii",
+    "city": "Vnr",
+    "district": "vnr",
+    "pincode": 123678,
+    "country": "IN"
+  },
+  "phone_number": 11422333244,
+  "reference_id": "IDREF",
+  "note": "nandha pandi notes",
+  
+  "preferences": {
+    "email_unsubscribed" : false
+  },
+   "creation_source": "THIRD-PARTY",
+   "version": 0.1
+ }
+
+### Update Homeowners
+
+PATCH  http://localhost:3000/homeowners/updateHomeowners/61cb377b1580524caebb1136
+Content-Type: application/json
+{
+ "first_name": "update1",
+ "last_name": "sample",
+ "mail_address": "sample@example.com",
+ "address": {
+     "address_line_1": "2/1819 karajer",
+     "address_line_2": "viswaii",
+     "city": "Vnr",
+     "district": "vnr",
+     "pincode": 123678,
+     "country": "IN"
+  },
+  "phone_number": 11422333244,
+  "reference_id": "IDREF",
+  "note": "nandha pandi notes",
+ 
+  "preferences": {
+     "email_unsubscribed" : false
+   },
+  "creation_source": "THIRD-PARTY",
+  "version": 0.1
+  }
+ 
+### Delete Homeowners
+DELETE  http://localhost:3000/homeowners/deleteHomeowner/61cb5f1dbd6a6f8ea1201453
