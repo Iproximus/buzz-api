@@ -1,8 +1,8 @@
 ### Get All Users
-GET http://localhost:3000/users/listAll
+GET http://localhost:2552/api/users/listAll
 
 ### Get Single User
-GET http://localhost:3000/users/listOne/61cae21d0179927162f7c26c
+GET http://localhost:3000/users/listOne/62528a8c72a84121b4af5e87
 
 ### Insert new User
 POST http://localhost:3000/users/addUser
@@ -95,3 +95,42 @@ Content-Type: application/json
  
 ### Delete Homeowners
 DELETE  http://localhost:3000/homeowners/deleteHomeowner/61cb5f1dbd6a6f8ea1201453
+Content-Type: application/json
+
+###Add Property
+POST http://localhost:3000/propertys/addpropertys
+Content-Type: application/json
+
+{
+    "uploadimg" : "file",
+    "streetnumber" : 6789 ,
+    "streetname" : "xzyxzty",
+    "country" : "us",
+    "state" :  "texas" ,
+    "city" : "lions",
+    "zipcode" : 89885 ,
+    "firstname" : "magil",
+    "lastname" : "mathi",
+    "phone" : 9998989898,
+    "email" : "super@gmail.com",
+    "yearbuilt" : 1977,
+    "area" : 45,
+    "lotarea" : 1275 ,
+    "bedrooms" : 5,
+    "bathrooms" : 3,
+    "storey" : 2,
+    "ownership" : "owned",
+    "duestatus" : "paid"
+    "hometype" : "town home",
+    "homevalue" : 170000,
+    "taxassessment" : 20000
+}
+
+###List all propertys
+GET  http://localhost:3000/propertys/listAllpropertys
+
+###get single property
+GET  http://localhost:3000/propertys/getproperty/62597c21fb74c838f30c192e
+
+### Delete property by id
+DELETE  http://localhost:3000/propertys/deleteproperty/6245279567aed55a83069154

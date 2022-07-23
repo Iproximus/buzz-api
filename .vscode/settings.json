@@ -4,5 +4,6 @@
         "mailid",
         "phnumber",
         "Shema"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
