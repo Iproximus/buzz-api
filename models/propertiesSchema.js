@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const propertysSchema = new mongoose.Schema({
+const propertiesSchema = new mongoose.Schema({
     id:{
         type: String,
         required: false
@@ -94,4 +94,4 @@ const propertysSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('propertys', propertysSchema)
+module.exports = mongoose.model('properties', propertiesSchema)

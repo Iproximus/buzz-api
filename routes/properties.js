@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const Propertys = require('../models/propertysSchema')
+const Properties = require('../models/propertiesSchema')
 
-router.post('/addpropertys', async (req, res) => {
-    const propertys = new Propertys({
+router.post('/addproperty', async (req, res) => {
+    const properties = new Properties({
         uploadimg: req.body.uploadimg,
         streetnumber: req.body.streetnumber,
         streetname: req.body.streetname,
@@ -29,8 +29,8 @@ router.post('/addpropertys', async (req, res) => {
     })
     console.log("-----Add Property api-------");
     try {
-        const newPropertys = await propertys.save()
-        res.status(201).json(newPropertys)
+        const newProperties = await properties.save()
+        res.status(201).json(newProperties)
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
@@ -43,7 +43,7 @@ router.patch('/updateproperty/:id', async (req, res) => {
         const id = req.params.id;
         const updates = req.body;
         const option = { new: true };
-        const updateproperty = await Propertys.findByIdAndUpdate(id, updates, option)
+        const updateproperty = await Properties.findByIdAndUpdate(id, updates, option)
         res.json(updateproperty)
     } catch (err) {
         res.status(400).json({ message: err.message })
@@ -51,7 +51,7 @@ router.patch('/updateproperty/:id', async (req, res) => {
 })
 
 // router.post('/updateproperty/:id') ,function (req, res) {
-//     Propertys.findById(req.params.id, function (err, data) {
+//     Properties.findById(req.params.id, function (err, data) {
 //         if (!data)
 //             return next(new Error('Unable To Find Employee With This Id'));
 //         else {
@@ -86,11 +86,11 @@ router.patch('/updateproperty/:id', async (req, res) => {
 //     });
 // };
 
-router.get('/listAllpropertys', async (req, res, next) => {
+router.get('/listAllproperties', async (req, res, next) => {
     try {
-        console.log("-----List All Propertys api-------");
-        const propertys = await Propertys.find()
-        res.json(propertys)
+        console.log("-----List All Properties api-------");
+        const properties = await Properties.find()
+        res.json(properties)
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
@@ -99,7 +99,7 @@ router.get('/listAllpropertys', async (req, res, next) => {
 router.get('/getproperty/:id', getUser, async (req, res, next) => {
     try {
         console.log("---------Get single record by id called--------");
-        let property = await Propertys.findById(req.params.id);
+        let property = await Properties.findById(req.params.id);
         res.json(property)
         if (property == null) {
             return res.status(404).json({ message: 'Property not found' })
@@ -121,11 +121,8 @@ router.delete('/deleteproperty/:id', getUser, async (req, res) => {
 
 async function getUser(req, res, next) {
     let property
-    console.log("Front end called the delete api");
-    console.log("---getUser-called---");
     try {
-        property = await Propertys.findById(req.params.id);
-        console.log(property);
+        property = await Properties.findById(req.params.id);
         if (property == null) {
             return res.status(404).json({ message: 'Property not found' })
         }

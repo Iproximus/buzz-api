@@ -98,7 +98,7 @@ DELETE  http://localhost:3000/homeowners/deleteHomeowner/61cb5f1dbd6a6f8ea120145
 Content-Type: application/json
 
 ###Add Property
-POST http://localhost:3000/propertys/addpropertys
+POST http://localhost:3000/properties/addproperties
 Content-Type: application/json
 
 {
@@ -126,11 +126,11 @@ Content-Type: application/json
     "taxassessment" : 20000
 }
 
-###List all propertys
-GET  http://localhost:3000/propertys/listAllpropertys
+###List all properties
+GET  http://localhost:3000/properties/listAllproperties
 
 ###get single property
-GET  http://localhost:3000/propertys/getproperty/62597c21fb74c838f30c192e
+GET  http://localhost:3000/properties/getproperty/62597c21fb74c838f30c192e
 
 ### Delete property by id
-DELETE  http://localhost:3000/propertys/deleteproperty/6245279567aed55a83069154
+DELETE  http://localhost:3000/properties/deleteproperty/6245279567aed55a83069154

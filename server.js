@@ -53,18 +53,18 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
 
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
-db.once('open', () => console.log('Buzz-api DB Connected'))
+db.once('open', () => console.log(' ✅ Database Connected'))
 
 app.use(express.json())
 const usersRoute = require('./routes/users')
 const homeownersRoute = require('./routes/homeowners')
-const propertysRoute = require('./routes/propertys')
-const uploadFileRoute = require('./routes/uploadFiles')
+const propertiesRoute = require('./routes/properties')
+const s3FileRoute = require('./routes/s3bucket')
 
 app.use('/users', usersRoute)
 app.use('/homeowners', homeownersRoute)
-app.use('/propertys', propertysRoute)
-app.use('/uploadFiles', uploadFileRoute)
+app.use('/properties', propertiesRoute)
+app.use('/s3bucket', s3FileRoute)
 
 
-app.listen(3000, () => console.log('Server Started at 3000'))
+app.listen(process.env.PORT, () => console.log('\n ✅ Buzz API Server Started at port :',+ process.env.PORT))
